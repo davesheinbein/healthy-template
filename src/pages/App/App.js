@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import Header from '../../components/Header/Header';
 import Section from '../../components/Section/Section';
@@ -18,7 +19,7 @@ import { Switch, Route } from 'react-router-dom';
 // User Auth
 import { auth } from '../../firebase';
 // Redux
-import { useStateValue } from '../../components/StateProvider/StateProvider';
+// import { useStateValue } from '../../components/StateProvider/StateProvider';
 // Stripe
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
@@ -27,7 +28,20 @@ import { Elements } from '@stripe/react-stripe-js';
 import './stlye/App.css';
 import Login from '../../components/Login/Login';
 
-console.log(Constants[0].id);
+// Need Work... Help
+// Stripe Publishable key https://dashboard.stripe.com/test/apikeys
+// promise that compiles and load stripe based on Key
+const promise = loadStripe(
+	'pk_test_51HXuryAGYh1gFsygAcbMQ6nNumpmFOFhQIUvLsoqKk1Z30xYMV6DAiPtjekVGt8fOo92Iu8oP4E2fNRP21hfi0rm00KGWwWewI'
+);
+
+// Need Work... Help
+// function mapDispatchToProps(dispatch) {
+// 	return {
+// 		SET_USER: (user) => dispatch(user(SET_USER)),
+// 	};
+// }
+
 class App extends Component {
 	/*--- State ---*/
 	state = {
@@ -196,4 +210,8 @@ class App extends Component {
 		);
 	}
 }
+
+// const _App = connect(null, mapDispatchToProps)(App);
+
+// export default _App;
 export default App;
