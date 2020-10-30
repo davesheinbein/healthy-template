@@ -1,18 +1,23 @@
 .checkout {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 3em 0 0;
-  background-color: white;
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
-  min-height: 80vh;
+  background-color: transparent;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  min-height: 90vh;
+  margin-top: 5em;
 }
 
 .checkout .checkout__left .checkout__ad {
   width: 100%;
   margin-bottom: 10px;
+}
+
+.checkout .checkout__left .checkout__header {
+  margin-left: 1em;
 }
 
 .checkout .checkout__left .checkout__header .checkout__title {

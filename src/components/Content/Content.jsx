@@ -5,6 +5,7 @@ import ContactForm from '../Form/ContactForm';
 import CarouselSection from '../CarouselSection/CarouselSection';
 // Images defined in constants
 import { images } from '../Constants/Constants';
+import { items } from '../Constants/Constants';
 import './style/Content.css';
 
 function Content({
@@ -41,7 +42,7 @@ function Content({
 				<ContactForm />
 			</div>
 			<div className='content__carousel'>
-				<CarouselSection />
+				<CarouselSection items={items} />
 			</div>
 		</div>
 	);

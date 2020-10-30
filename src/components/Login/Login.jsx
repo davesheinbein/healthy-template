@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { auth } from '../../firebase';
+
 import './style/Login.css';
 
 function Login() {
@@ -44,7 +45,7 @@ function Login() {
 	return (
 		<div className='login'>
 			<div className='login__container'>
-				<h1>Sign-in</h1>
+				<h1>Sign-In</h1>
 
 				<form>
 					<h5>Email</h5>
@@ -83,14 +84,15 @@ function Login() {
 					Cookies Notice and our Interest-Based Ads Notice.
 				</p>
 
-				<button
-					className='login__registerButton'
-					// fumctionality defined at the top
-					onClick={register}
-					// type button to click to submit
-					type='button'>
-					Create your Frushley Account
-				</button>
+				<Link className='login__link' to='/signup'>
+					<button
+						className='login__registerButton'
+						// fumctionality defined at the top
+						// type button to click to submit
+						type='button'>
+						Create your Account
+					</button>
+				</Link>
 			</div>
 		</div>
 	);

@@ -3,10 +3,14 @@ const path = require('path');
 const logger = require('morgan');
 const favicon = require('serve-favicon');
 const cors = require('cors');
-const sgMail = require('@sendgrid/mail');
-const app = express();
 
+const sgMail = require('@sendgrid/mail');
+
+const app = express();
 require('dotenv').config({ path: '.sendgrid.env' });
+
+// New
+const stripe = require('stripe')(process.env.STRIPE);
 
 app.use(cors());
 app.use(logger('dev'));
@@ -51,6 +55,27 @@ app.get('/send-email', (req, res) => {
 			console.log(error.response.body.errors)
 		);
 });
+
+// New
+// post response of payment processing
+app.post('/payments/create', async (request, response) => {
+	// request.query.total selects the total from the ?total in
+	// Payments.jsx url: `/payments/create?total=${getBasketTotal(basket) * 100}`,
+	// --- you can use params as well
+	const total = request.query.total;
+
+	console.log('payment request received ->> Total:', total);
+
+	const paymentIntent = await stripe.paymentIntents.create({
+		amount: total, // Subunits of the currency
+		currency: 'usd',
+	});
+	// Ok payments been created
+	response.status(201).send({
+		clientSecret: paymentIntent.client_secret,
+	});
+});
+
 app.get('/*', function (req, res) {
 	res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });

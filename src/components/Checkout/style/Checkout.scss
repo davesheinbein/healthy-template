@@ -1,15 +1,17 @@
 .checkout {
+	position: relative;
 	display: flex;
-	padding: 3em 0 0;
-	background-color: white;
-	height: max-content;
-	min-height: 80vh;
+	background-color: transparent;
+	height: fit-content;
+	min-height: 90vh;
+	margin-top: 5em;
 	.checkout__left {
 		.checkout__ad {
 			width: 100%;
 			margin-bottom: 10px;
 		}
 		.checkout__header {
+			margin-left: 1em;
 			& > h3 {
 			}
 			.checkout__title {

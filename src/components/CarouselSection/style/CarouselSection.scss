@@ -5,16 +5,15 @@
 	@include flexDirJusAli(column, center, center);
 	background: linear-gradient(
 		to bottom,
-		rgb(75, 179, 146),
-		rgb(64, 148, 121)
+		rgba(75, 179, 146, 0.75),
+		rgba(64, 148, 121, 0.75)
 	);
 	.rec-carousel-wrapper {
 		@include widthHeight(100%, 100%);
 		max-width: 1000px;
-		padding: 2em 0 1em;
+		padding: 1em 0;
 		.rec-carousel {
 			.rec-slider-container {
-				margin: 0 3em;
 				.rec-slider {
 					.rec-swipable {
 						.rec-carousel-item {
@@ -24,6 +23,11 @@
 									center,
 									center
 								);
+								.CarouselSection__title {
+									font-size: 28px;
+									font-weight: 900;
+									color: rgba(255, 255, 255, 1);
+								}
 								img {
 									outline-width: 0;
 									outline: none;
@@ -37,6 +41,7 @@
 								.CarouselSection__price {
 									font-size: 24px;
 									font-weight: 400;
+									color: rgba(243, 247, 28, 1);
 								}
 								button {
 									@include widthHeight(fit-content, 100%);
@@ -83,6 +88,18 @@
 				outline-color: #ffffff;
 				box-shadow: 0 0 1px 1px #ffffff;
 			}
+		}
+	}
+	.CarouselSection__link {
+		padding: 0em 0 0.5em;
+		text-decoration: none;
+		color: #235bf3;
+		.CarouselSection__linkText {
+			font-size: 20px;
+			font-weight: 600;
+		}
+		&:hover {
+			color: #ffffff;
 		}
 	}
 }

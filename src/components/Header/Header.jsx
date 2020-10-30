@@ -20,6 +20,8 @@ function Header(props) {
 		}
 	};
 
+	// console.log(props, '<<< props - basket');
+
 	return (
 		<header className='header'>
 			<nav className='header__navigation'>

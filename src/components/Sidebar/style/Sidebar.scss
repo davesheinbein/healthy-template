@@ -25,8 +25,8 @@
 			color: transparent;
 			background: linear-gradient(
 				to bottom,
-				rgb(75, 179, 146),
-				rgb(64, 148, 121)
+				rgb(231, 231, 231),
+				rgb(255, 255, 255)
 			);
 			background-clip: text;
 			&:hover,
@@ -42,12 +42,19 @@
 			.sidebar__logoText {
 				font-size: 36px;
 				font-weight: 900;
-				border-bottom: 1px solid rgba(75, 179, 146, 0.5);
+				border-bottom: 1px solid rgba(231, 231, 231, 0.5);
+				outline-width: 0;
+				outline: none;
 				&:hover,
 				&:active {
-					color: rgba(0, 0, 0, 0.5);
-					outline-width: 0;
-					outline: none;
+					color: transparent;
+					background: linear-gradient(
+						to bottom,
+						rgba(20, 20, 20, 0.5),
+						rgba(0, 0, 0, 0.5)
+					);
+					border-bottom: 1px solid rgba(231, 231, 231, 0.25);
+					background-clip: text;
 				}
 			}
 		}
@@ -67,17 +74,23 @@
 				color: transparent;
 				background: linear-gradient(
 					to bottom,
-					rgb(75, 179, 146),
-					rgb(64, 148, 121)
+					rgb(231, 231, 231),
+					rgb(255, 255, 255)
 				);
 				background-clip: text;
-				border-bottom: 2px solid rgba(75, 179, 146, 0.5);
+				border-bottom: 2px solid rgba(231, 231, 231, 0.5);
+				outline-width: 0;
+				outline: none;
 				&:hover,
 				&:active {
-					color: rgba(0, 0, 0, 0.5);
-					border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-					outline-width: 0;
-					outline: none;
+					color: transparent;
+					background: linear-gradient(
+						to bottom,
+						rgba(20, 20, 20, 0.5),
+						rgba(0, 0, 0, 0.5)
+					);
+					border-bottom: 1px solid rgba(231, 231, 231, 0.25);
+					background-clip: text;
 				}
 				.sidebar__option {
 					width: fit-content;
@@ -86,30 +99,65 @@
 					color: transparent;
 					background: linear-gradient(
 						to bottom,
-						rgb(75, 179, 146),
-						rgb(64, 148, 121)
+						rgb(231, 231, 231),
+						rgb(255, 255, 255)
 					);
 					background-clip: text;
+					&:hover,
+					&:active {
+						color: transparent;
+						background: linear-gradient(
+							to bottom,
+							rgba(20, 20, 20, 0.5),
+							rgba(0, 0, 0, 0.5)
+						);
+						background-clip: text;
+					}
 					.sidebar__optionLineOne {
 						text-decoration: none;
+						width: fit-content;
 						// might remove vvv
-						border-bottom: 1px solid #4bb392;
+						border-bottom: 1px solid
+							rgba(231, 231, 231, 0.5);
 					}
 					.sidebar__optionLineTwo {
 						text-decoration: none;
+						width: fit-content;
 						// might remove vvv
-						border-bottom: 1px solid #4bb392;
+						border-bottom: 1px solid
+							rgba(231, 231, 231, 0.5);
 					}
 				}
 				.sidebar__optionBasket {
-					color: rgb(75, 179, 146);
+					color: rgb(231, 231, 231);
+					border-bottom: 1px solid rgba(231, 231, 231, 0.5);
+					width: fit-content;
+					&:hover,
+					&:active {
+						color: rgba(0, 0, 0, 0.5);
+
+						border-bottom: 1px solid
+							rgba(231, 231, 231, 0.25);
+					}
 					.sidebar__basketCount {
 						background: linear-gradient(
 							to bottom,
-							rgb(75, 179, 146),
-							rgb(64, 148, 121)
+							rgb(231, 231, 231),
+							rgb(255, 255, 255)
 						);
 						background-clip: text;
+						&:hover,
+						&:active {
+							color: transparent;
+							background: linear-gradient(
+								to bottom,
+								rgba(20, 20, 20, 0.5),
+								rgba(0, 0, 0, 0.5)
+							);
+							border-bottom: 1px solid
+								rgba(231, 231, 231, 0.25);
+							background-clip: text;
+						}
 					}
 				}
 			}

@@ -1,14 +1,15 @@
 .payment {
-  background-color: white;
-  min-height: 80vh;
+  background-color: transparent;
+  min-height: 90vh;
+  margin-top: 5em;
 }
 
 .payment__container > h1 {
   text-align: center;
   padding: 10px;
   font-weight: 400;
-  background-color: #eaeded;
-  border-bottom: 1px solid lightgray;
+  background-color: rgba(211, 211, 211, 0.25);
+  border-bottom: 1px solid rgba(211, 211, 211, 0.25);
 }
 
 .payment__container > h1 a {
@@ -56,14 +57,16 @@
 }
 
 .payment__details > form > div > button {
-  background: #f0c14b;
-  border-radius: 2px;
   width: 100%;
   height: 30px;
   border: 1px solid;
   font-weight: bolder;
   margin-top: 1em;
-  border-color: #a88734 #9c7e31 #846a29;
   color: #111;
+  border-color: rgba(75, 179, 146, 0.5);
+  background: #4bb392;
+  -webkit-box-shadow: 0px 1px 1px black;
+          box-shadow: 0px 1px 1px black;
+  border-radius: 2px;
 }
 /*# sourceMappingURL=Payment.css.map */

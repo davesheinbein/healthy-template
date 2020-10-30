@@ -4,7 +4,7 @@ import { useStateValue } from '../StateProvider/StateProvider';
 import { auth } from '../../firebase';
 // icons
 import { ShoppingBasket } from '@material-ui/icons';
-import logo from '../../images/flowerLogo.png';
+import logo from '../../images/flowerLogoWhite.png';
 import './style/Sidebar.css';
 
 const Sidebar = (props) => {
@@ -22,22 +22,22 @@ const Sidebar = (props) => {
 	return (
 		<nav className={sidebarClasses}>
 			<div className='sidebar__logo'>
-				<a href='https://github.com/davesheinbein/healthy-template'>
+				<Link to='/'>
 					<img src={logo} alt='logo' />
 					<div className='sidebar__logoText'>FRUSHLEY</div>
-				</a>
+				</Link>
 			</div>
 			<ul>
-				<li>
+				<li style={{ display: props.display }}>
 					<a href='#about'>ABOUT</a>
 				</li>
-				<li>
+				<li style={{ display: props.display }}>
 					<a href='#product'>PRODUCT</a>
 				</li>
-				<li>
+				<li style={{ display: props.display }}>
 					<a href='#team'>TEAM</a>
 				</li>
-				<li>
+				<li style={{ display: props.display }}>
 					<a href='#contact'>CONTACT</a>
 				</li>
 				<li>

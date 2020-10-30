@@ -92,10 +92,12 @@
 								text-decoration: none;
 								// might remove vvv
 								border-bottom: 1px solid #4bb392;
+								width: fit-content;
 							}
 						}
 						.header__optionBasket {
 							border-bottom: 1px solid #4bb392;
+							width: fit-content;
 							.header__basketCount {
 							}
 						}
@@ -106,13 +108,13 @@
 	}
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
 	.header__navigationItems {
 		display: none;
 	}
 }
 
-@media (min-width: 769px) {
+@media (min-width: 901px) {
 	.header__toggleButton {
 		display: none;
 	}

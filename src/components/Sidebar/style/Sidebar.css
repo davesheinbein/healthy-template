@@ -40,8 +40,8 @@
       -ms-flex-align: center;
           align-items: center;
   color: transparent;
-  background: -webkit-gradient(linear, left top, left bottom, from(#4bb392), to(#409479));
-  background: linear-gradient(to bottom, #4bb392, #409479);
+  background: -webkit-gradient(linear, left top, left bottom, from(#e7e7e7), to(white));
+  background: linear-gradient(to bottom, #e7e7e7, white);
   background-clip: text;
 }
 
@@ -60,13 +60,17 @@
 .sidebar .sidebar__logo a .sidebar__logoText {
   font-size: 36px;
   font-weight: 900;
-  border-bottom: 1px solid rgba(75, 179, 146, 0.5);
+  border-bottom: 1px solid rgba(231, 231, 231, 0.5);
+  outline-width: 0;
+  outline: none;
 }
 
 .sidebar .sidebar__logo a .sidebar__logoText:hover, .sidebar .sidebar__logo a .sidebar__logoText:active {
-  color: rgba(0, 0, 0, 0.5);
-  outline-width: 0;
-  outline: none;
+  color: transparent;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(20, 20, 20, 0.5)), to(rgba(0, 0, 0, 0.5)));
+  background: linear-gradient(to bottom, rgba(20, 20, 20, 0.5), rgba(0, 0, 0, 0.5));
+  border-bottom: 1px solid rgba(231, 231, 231, 0.25);
+  background-clip: text;
 }
 
 .sidebar ul {
@@ -98,17 +102,20 @@
   font-weight: 900;
   font-style: italic;
   color: transparent;
-  background: -webkit-gradient(linear, left top, left bottom, from(#4bb392), to(#409479));
-  background: linear-gradient(to bottom, #4bb392, #409479);
+  background: -webkit-gradient(linear, left top, left bottom, from(#e7e7e7), to(white));
+  background: linear-gradient(to bottom, #e7e7e7, white);
   background-clip: text;
-  border-bottom: 2px solid rgba(75, 179, 146, 0.5);
+  border-bottom: 2px solid rgba(231, 231, 231, 0.5);
+  outline-width: 0;
+  outline: none;
 }
 
 .sidebar ul li a:hover, .sidebar ul li a:active {
-  color: rgba(0, 0, 0, 0.5);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-  outline-width: 0;
-  outline: none;
+  color: transparent;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(20, 20, 20, 0.5)), to(rgba(0, 0, 0, 0.5)));
+  background: linear-gradient(to bottom, rgba(20, 20, 20, 0.5), rgba(0, 0, 0, 0.5));
+  border-bottom: 1px solid rgba(231, 231, 231, 0.25);
+  background-clip: text;
 }
 
 .sidebar ul li a .sidebar__option {
@@ -130,28 +137,58 @@
           align-items: initial;
   white-space: nowrap;
   color: transparent;
-  background: -webkit-gradient(linear, left top, left bottom, from(#4bb392), to(#409479));
-  background: linear-gradient(to bottom, #4bb392, #409479);
+  background: -webkit-gradient(linear, left top, left bottom, from(#e7e7e7), to(white));
+  background: linear-gradient(to bottom, #e7e7e7, white);
+  background-clip: text;
+}
+
+.sidebar ul li a .sidebar__option:hover, .sidebar ul li a .sidebar__option:active {
+  color: transparent;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(20, 20, 20, 0.5)), to(rgba(0, 0, 0, 0.5)));
+  background: linear-gradient(to bottom, rgba(20, 20, 20, 0.5), rgba(0, 0, 0, 0.5));
   background-clip: text;
 }
 
 .sidebar ul li a .sidebar__option .sidebar__optionLineOne {
   text-decoration: none;
-  border-bottom: 1px solid #4bb392;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-bottom: 1px solid rgba(231, 231, 231, 0.5);
 }
 
 .sidebar ul li a .sidebar__option .sidebar__optionLineTwo {
   text-decoration: none;
-  border-bottom: 1px solid #4bb392;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-bottom: 1px solid rgba(231, 231, 231, 0.5);
 }
 
 .sidebar ul li a .sidebar__optionBasket {
-  color: #4bb392;
+  color: #e7e7e7;
+  border-bottom: 1px solid rgba(231, 231, 231, 0.5);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.sidebar ul li a .sidebar__optionBasket:hover, .sidebar ul li a .sidebar__optionBasket:active {
+  color: rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid rgba(231, 231, 231, 0.25);
 }
 
 .sidebar ul li a .sidebar__optionBasket .sidebar__basketCount {
-  background: -webkit-gradient(linear, left top, left bottom, from(#4bb392), to(#409479));
-  background: linear-gradient(to bottom, #4bb392, #409479);
+  background: -webkit-gradient(linear, left top, left bottom, from(#e7e7e7), to(white));
+  background: linear-gradient(to bottom, #e7e7e7, white);
+  background-clip: text;
+}
+
+.sidebar ul li a .sidebar__optionBasket .sidebar__basketCount:hover, .sidebar ul li a .sidebar__optionBasket .sidebar__basketCount:active {
+  color: transparent;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(20, 20, 20, 0.5)), to(rgba(0, 0, 0, 0.5)));
+  background: linear-gradient(to bottom, rgba(20, 20, 20, 0.5), rgba(0, 0, 0, 0.5));
+  border-bottom: 1px solid rgba(231, 231, 231, 0.25);
   background-clip: text;
 }
 

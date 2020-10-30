@@ -8,32 +8,32 @@
 	background-color: #f3f3f3;
 	border: 1px solid #dddddd;
 	border-radius: 3px;
-}
-
-.subtotal__gift {
-	display: flex;
-	align-items: center;
-}
-
-.checkbox {
-	margin-right: 5px;
-}
-
-.subtotal__btn {
-	background: rgba(75, 179, 146, 1);
-	border-radius: 2px;
-	width: 100%;
-	height: 30px;
-	border: 1px solid;
-	margin-top: 10px;
-	border-color: rgba(75, 179, 146, 0.75);
-	box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.5);
-	color: #111;
-	outline: transparent;
-	transition: all 0.5s ease-in-out;
-	&:hover {
-		color: #333333;
-		background: rgba(75, 179, 146, 0.75);
-		box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.25);
+	.subtotal__gift {
+		display: flex;
+		align-items: center;
+		.checkbox {
+			margin-right: 5px;
+			outline: none;
+			outline-width: 0;
+			position: relative;
+		}
+	}
+	.subtotal__btn {
+		background: rgba(75, 179, 146, 1);
+		border-radius: 2px;
+		width: 100%;
+		height: 30px;
+		border: 1px solid;
+		margin-top: 10px;
+		border-color: rgba(75, 179, 146, 0.75);
+		box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.5);
+		color: #111;
+		outline: transparent;
+		transition: all 0.5s ease-in-out;
+		&:hover {
+			color: #333333;
+			background: rgba(75, 179, 146, 0.75);
+			box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.25);
+		}
 	}
 }

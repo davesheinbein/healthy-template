@@ -17,7 +17,7 @@
   border-radius: 3px;
 }
 
-.subtotal__gift {
+#subtotal .subtotal__gift {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -26,11 +26,14 @@
           align-items: center;
 }
 
-.checkbox {
+#subtotal .subtotal__gift .checkbox {
   margin-right: 5px;
+  outline: none;
+  outline-width: 0;
+  position: relative;
 }
 
-.subtotal__btn {
+#subtotal .subtotal__btn {
   background: #4bb392;
   border-radius: 2px;
   width: 100%;
@@ -46,7 +49,7 @@
   transition: all 0.5s ease-in-out;
 }
 
-.subtotal__btn:hover {
+#subtotal .subtotal__btn:hover {
   color: #333333;
   background: rgba(75, 179, 146, 0.75);
   -webkit-box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.25);

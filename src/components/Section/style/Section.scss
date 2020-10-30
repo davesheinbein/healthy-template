@@ -1,7 +1,8 @@
 @import '../../../mixins/mixins.scss';
 
 .section {
-	flex: 1;
-	@include widthHeight(100%, 100vh);
+	@include widthHeight(100%, fit-content);
+	min-height: 100%;
 	@include flexDirJusAli(column, center, center);
+	flex: 1;
 }

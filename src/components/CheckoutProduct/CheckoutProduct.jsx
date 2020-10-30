@@ -7,7 +7,6 @@ function CheckoutProduct({
 	image,
 	title,
 	price,
-	// rating,
 	hideButton,
 }) {
 	const [{}, dispatch] = useStateValue();
@@ -32,17 +31,6 @@ function CheckoutProduct({
 					<small>$</small>
 					<strong>{price}</strong>
 				</p>
-				{/* <div className='checkoutProduct__rating'>
-					{Array(rating)
-						.fill()
-						.map((_, i) => (
-							<p>
-								<span role='img' aria-label='star'>
-									⭐
-								</span>
-							</p>
-						))}
-				</div> */}
 				{!hideButton && (
 					<button onClick={removeFromBasket}>
 						Remove from Cart

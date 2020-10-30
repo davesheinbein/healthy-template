@@ -160,19 +160,25 @@
 .header .header__navigation .header__navigationItems ul li a .header__option .header__optionLineTwo {
   text-decoration: none;
   border-bottom: 1px solid #4bb392;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .header .header__navigation .header__navigationItems ul li a .header__optionBasket {
   border-bottom: 1px solid #4bb392;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .header__navigationItems {
     display: none;
   }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 901px) {
   .header__toggleButton {
     display: none;
   }

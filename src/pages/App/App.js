@@ -14,8 +14,11 @@ import Orders from '../../components/Orders/Orders';
 import Payment from '../../components/Payment/Payment';
 import Bar from '../../components/Bar/Bar';
 import Footer from '../../components/Footer/Footer';
+import Login from '../../components/Login/Login';
+import Signup from '../../components/Signup/Signup';
 // All static props info
 import Constants from '../../components/Constants/Constants';
+import { items } from '../../components/Constants/Constants';
 
 // Routing
 import { Switch, Route } from 'react-router-dom';
@@ -28,7 +31,7 @@ import { Elements } from '@stripe/react-stripe-js';
 // Style
 
 import './stlye/App.css';
-import Login from '../../components/Login/Login';
+import Products from '../../components/Products/Products';
 
 // Need Work... Help
 // Stripe Publishable key https://dashboard.stripe.com/test/apikeys
@@ -37,52 +40,61 @@ const promise = loadStripe(
 	'pk_test_51HXuryAGYh1gFsygAcbMQ6nNumpmFOFhQIUvLsoqKk1Z30xYMV6DAiPtjekVGt8fOo92Iu8oP4E2fNRP21hfi0rm00KGWwWewI'
 );
 
-// Need Work... Help
-// function mapDispatchToProps(dispatch) {
-// 	return {
-// 		SET_USER: (user) => dispatch(user(SET_USER)),
-// 	};
-// }
-
-/*--- State ---*/
-state = {
-	sidebarOpen: false,
-};
-
-/*--- Handle Methods ---*/
-sidebarClickHandler = () => {
-	this.setState((prevState) => {
-		return { sidebarOpen: !prevState.sidebarOpen };
-	});
-};
-
-sidebarBackdropClickHandler = () => {
-	this.setState({ sidebarOpen: false });
-};
-/*--- Lifecycle Methods ---*/
-
 function App() {
 	const [sidebarOpen, setSidebarOpen] = useState(false);
 
 	let sidebarBackdrop;
 
-	if (this.state.sidebarOpen) {
+	const sidebarClickHandler = () => {
+		setSidebarOpen(true);
+	};
+
+	const sidebarBackdropClickHandler = () => {
+		setSidebarOpen(false);
+	};
+
+	if (sidebarOpen) {
 		sidebarBackdrop = (
 			<SidebarBackdrop
 				sidebarBackdropClickHandler={
-					this.sidebarBackdropClickHandler
+					sidebarBackdropClickHandler
 				}
 			/>
 		);
 	}
+
+	const [{}, dispatch] = useStateValue();
+
+	// will run one when app component loads
+	useEffect(() => {
+		auth.onAuthStateChanged((authUser) => {
+			// console.log(authUser, '<< authUser');
+
+			if (authUser) {
+				// the use just loggedIn / was loggedIn
+				dispatch({
+					type: 'SET_USER',
+					user: authUser,
+				});
+			} else {
+				// the use loggedOut
+				dispatch({
+					type: 'SET_USER',
+					user: null,
+				});
+			}
+		});
+	}, []);
+
 	return (
 		<div className='app'>
 			<Switch>
 				<Route exact path='/'>
 					<Header
-						sidebarClickHandler={this.sidebarClickHandler}
+						display='block'
+						sidebarClickHandler={sidebarClickHandler}
 					/>
-					<Sidebar show={this.state.sidebarOpen} />
+					<Sidebar display='block' show={sidebarOpen} />
 					{sidebarBackdrop}
 					<Section>
 						<Content
@@ -168,17 +180,43 @@ function App() {
 					<Section>
 						<Header
 							display='none'
-							sidebarClickHandler={this.sidebarClickHandler}
+							sidebarClickHandler={sidebarClickHandler}
 						/>
+						<Sidebar display='none' show={sidebarOpen} />
+						{sidebarBackdrop}
 						<Login />
+					</Section>
+				</Route>
+				<Route exact path='/signup'>
+					<Section>
+						<Header
+							display='none'
+							sidebarClickHandler={sidebarClickHandler}
+						/>
+						<Sidebar display='none' show={sidebarOpen} />
+						{sidebarBackdrop}
+						<Signup />
+					</Section>
+				</Route>
+				<Route exact path='/products'>
+					<Section>
+						<Header
+							display='none'
+							sidebarClickHandler={sidebarClickHandler}
+						/>
+						<Sidebar display='none' show={sidebarOpen} />
+						{sidebarBackdrop}
+						<Products items={items} />
 					</Section>
 				</Route>
 				<Route exact path='/orders'>
 					<Section>
 						<Header
 							display='none'
-							sidebarClickHandler={this.sidebarClickHandler}
+							sidebarClickHandler={sidebarClickHandler}
 						/>
+						<Sidebar display='none' show={sidebarOpen} />
+						{sidebarBackdrop}
 						<Orders />
 					</Section>
 				</Route>
@@ -186,12 +224,20 @@ function App() {
 					<Section>
 						<Header
 							display='none'
-							sidebarClickHandler={this.sidebarClickHandler}
+							sidebarClickHandler={sidebarClickHandler}
 						/>
+						<Sidebar display='none' show={sidebarOpen} />
+						{sidebarBackdrop}
 						<Checkout />
 					</Section>
 				</Route>
 				<Route exact path='/payment'>
+					<Header
+						display='none'
+						sidebarClickHandler={sidebarClickHandler}
+					/>
+					<Sidebar display='none' show={sidebarOpen} />
+					{sidebarBackdrop}
 					{/* Payment component is nested within the Elements */}
 					{/* imported from @stripe/react-stripe-js */}
 					{/* promise is defined above with */}
