@@ -11,8 +11,19 @@ export const initialState = {
 // iteration of each item every time it iterates through the
 // item.price is added to the amount which is initially set to 0
 // Used in subtotal.jsx
-export const getBasketTotal = (basket) =>
-	basket?.reduce((amount, item) => item.price + amount, 0);
+export const getBasketTotal = (basket) => {
+	console.log(basket);
+	console.log(
+		basket?.reduce(
+			(amount, item) => Number(item.price) + amount,
+			0
+		)
+	);
+	return basket?.reduce(
+		(amount, item) => Number(item.price) + amount,
+		0
+	);
+};
 
 //  Creates the reducer variables => attached to index.js
 // Allow you to manipulate state

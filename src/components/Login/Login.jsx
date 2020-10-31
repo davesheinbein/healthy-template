@@ -8,6 +8,7 @@ function Login() {
 	const history = useHistory();
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
+	const [err, setErr] = useState(false);
 
 	// console.log('Login -> email', email);
 	// console.log('Login -> password', password);
@@ -23,23 +24,11 @@ function Login() {
 			.then((auth) => {
 				history.push('/');
 			})
-			.catch((error) => alert(error.message));
-	};
-
-	const register = (e) => {
-		e.preventDefault();
-		// Pulls auth from local firebase storage and then
-		// push to ('/') the Email, and Password that have been locally
-		// stored if the auth.
-		auth
-			.createUserWithEmailAndPassword(email, password)
-			.then((auth) => {
-				// console.log(auth);
-				if (auth) {
-					history.push('/');
-				}
-			})
-			.catch((error) => alert(error.message));
+			.catch((error) => {
+				setErr(true);
+				// alert(error.message);
+				console.log(error.message, '<< error.message');
+			});
 	};
 
 	return (
@@ -68,6 +57,11 @@ function Login() {
 						onChange={(e) => setPassword(e.target.value)}
 					/>
 
+					{err ? (
+						<small className='login__subText'>
+							Credentials didn't match up. Please try again...
+						</small>
+					) : null}
 					<button
 						className='login__signInButton'
 						// fumctionality defined at the top

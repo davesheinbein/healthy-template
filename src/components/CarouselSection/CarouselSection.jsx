@@ -1,6 +1,7 @@
 import React from 'react';
 import Carousel from 'react-elastic-carousel';
 import { Link } from 'react-router-dom';
+import Product from '../Product/Product';
 // Context API
 import { useStateValue } from '../StateProvider/StateProvider';
 // Constants
@@ -9,7 +10,7 @@ import './style/CarouselSection.css';
 function CarouselSection({ items }) {
 	const [{}, dispatch] = useStateValue();
 
-	const addToBasket = () => {
+	const addToBasket = (item) => {
 		// this is where dispatch is called
 		dispatch({
 			// this is were the action type is connected to the reducer
@@ -17,12 +18,13 @@ function CarouselSection({ items }) {
 			// here is where the action.item is defined
 			// the id, title, image, price, rating are being passed down through props
 			item: {
-				id: items.id,
-				title: items.title,
-				image: items.src,
-				price: items.price,
+				id: item.id,
+				title: item.title,
+				image: item.src,
+				price: item.price,
 			},
 		});
+		console.log(items, '<< items - Here');
 	};
 
 	return (
@@ -33,20 +35,10 @@ function CarouselSection({ items }) {
 				showArrows={false}>
 				{items.map((item) => (
 					<>
-						<div className='CarouselSection__title'>
-							{item.title}
-						</div>
-						<img
-							key={item.id}
-							src={item.src}
-							alt={item.title}
+						<Product
+							item={item}
+							classNm='CarouselSection__product'
 						/>
-						<div className='CarouselSection__price'>
-							<small>$</small> {item.price}
-						</div>
-						<button onClick={addToBasket}>
-							Add to Cart
-						</button>
 					</>
 				))}
 			</Carousel>

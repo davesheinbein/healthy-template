@@ -7,20 +7,9 @@ function Signup() {
 	const history = useHistory();
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
-
-	const signIn = (e) => {
-		e.preventDefault();
-		// Pulls auth from local firebase storage and then
-		// push ('/') the Email, and Password that have been locally
-		// stored and sees if that email and password match up with
-		// the ones on record.
-		auth
-			.signInWithEmailAndPassword(email, password)
-			.then((auth) => {
-				history.push('/');
-			})
-			.catch((error) => alert(error.message));
-	};
+	const [confirmPassword, setConfirmPassword] = useState(
+		''
+	);
 
 	const register = (e) => {
 		e.preventDefault();
@@ -63,24 +52,34 @@ function Signup() {
 						// e.target value is what a user types in
 						onChange={(e) => setPassword(e.target.value)}
 					/>
-					{/* <h5>Confirm Password</h5>
+					<h5>Confirm Password</h5>
 					<input
 						type='password'
 						// value is connected to state defined at the top
-						value={password}
+						value={confirmPassword}
 						// event is targeted using the setState prop
 						// e.target value is what a user types in
-						onChange={(e) => setPassword(e.target.value)}
-					/> */}
+						onChange={(e) =>
+							setConfirmPassword(e.target.value)
+						}
+					/>
 
 					<button
 						className='signup__registerButton'
 						// fumctionality defined at the top
 						onClick={register}
+						disabled={
+							password === confirmPassword ? null : true
+						}
 						// type button to click to submit
 						type='button'>
 						Create your Account
 					</button>
+					{password === confirmPassword ? null : (
+						<small className='signup__subText'>
+							Password doesn't match up. Please try again...
+						</small>
+					)}
 				</form>
 
 				<p>

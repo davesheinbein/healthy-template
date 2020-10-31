@@ -8,7 +8,7 @@ function Products({ items }) {
 			<div className='products__title'>Products</div>
 			<div className='products__container'>
 				{items.map((item) => (
-					<Product item={item} />
+					<Product item={item} classNm='product' />
 				))}
 			</div>
 		</div>

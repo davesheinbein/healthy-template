@@ -4,7 +4,7 @@ import { useStateValue } from '../StateProvider/StateProvider';
 // Constants
 import './style/Product.css';
 
-function Product({ item }) {
+function Product({ item, classNm }) {
 	const [{}, dispatch] = useStateValue();
 
 	const addToBasket = () => {
@@ -24,7 +24,7 @@ function Product({ item }) {
 	};
 
 	return (
-		<div className='product'>
+		<div className={classNm}>
 			<>
 				<div className='product__title'>{item.title}</div>
 				<img
