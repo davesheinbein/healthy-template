@@ -1,12 +1,12 @@
-# **Herbal medicine Website**
+# **Healthy Resturant Website**
 
 ### Click the link to view the website
 
-[Herbal medicine Website](https://healthy-template.web.app/)
+[Healthy Website](https://healthy-template.web.app/)
 
 ### About 
 
-##### Herbal medicine business website.
+##### Fresh foods business website with shopping cart and Stripe payment functionality.
 
 #### Project Work:
 
